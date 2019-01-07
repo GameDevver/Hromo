@@ -11,7 +11,6 @@ public class WanderingAI : MonoBehaviour {
 
     public GameObject fireballPrefab;//будем хранить префаб
     private GameObject _fireball;
-    private float min = -1.5f;
 
     void Start()
     {
@@ -35,7 +34,9 @@ public class WanderingAI : MonoBehaviour {
                     { //пустой игровой объект
                         _fireball = Instantiate(fireballPrefab) as GameObject;//тот же метод как в SceneController
                         //поместим огненый шар перед врагом и нацелим в направлении его движения
-                        _fireball.transform.position = transform.TransformPoint(Vector3.forward * min);
+                        //_fireball.transform.position = transform.TransformPoint(Vector3.forward * min);
+                        //_fireball.transform.rotation = transform.rotation;
+                        _fireball.transform.position = transform.TransformPoint(0, 2, 1);
                         _fireball.transform.rotation = transform.rotation;
                     }
                 }

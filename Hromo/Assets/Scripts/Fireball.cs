@@ -9,7 +9,7 @@ public class Fireball : MonoBehaviour {
 
     void Update()
     {
-        transform.Translate(0, 0, - speed * Time.deltaTime);
+        transform.Translate(0, 0, speed * Time.deltaTime);
     }
 
 
@@ -19,7 +19,7 @@ public class Fireball : MonoBehaviour {
         if (player != null)
         {//проверяем, является ли объект PlayerCharacter
             player.Hurt(damage);
-            Debug.Log("111");
+            
         }
         Destroy(this.gameObject);
     }

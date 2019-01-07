@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
 {
-
     private int _health;
     private int maxHealth;
-
 
     void Start()
     {
         _health = 50;//инициализация переменной
-        maxHealth = 100; //инициализация максимального здоровья
+        maxHealth = 50; //инициализация максимального здоровья
     }
 
     public void Hurt(int damage)
@@ -27,12 +25,19 @@ public class PlayerCharacter : MonoBehaviour
         if (_health > maxHealth)
         {
             _health = maxHealth;//не даем жизни подняться выше максимума
+            Debug.Log("health: " + _health + "/" + maxHealth);
         }
         else if (_health < 0)
         {
             _health = 0;//не даем уменьшать жизнь в минус
+            Debug.Log("health: " + _health + "/" + maxHealth);
         }
-        Debug.Log("health: " + _health + "/" + maxHealth);
+    }
+
+    private void Update()
+    {
+        PlayerCharacter player = GetComponent<PlayerCharacter>();
+        player.ChangeHealth(0);
     }
 }
 

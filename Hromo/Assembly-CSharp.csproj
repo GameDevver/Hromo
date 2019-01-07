@@ -61,14 +61,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\SceneController1.cs" />
     <Compile Include="Assets\Scripts\CamraRotator.cs" />
     <Compile Include="Assets\Scripts\Fireball.cs" />
     <Compile Include="Assets\Scripts\PlayerCharacter.cs" />
     <Compile Include="Assets\Scripts\ReactiveTarget.cs" />
-    <Compile Include="Assets\Scripts\ScenConroller.cs" />
     <Compile Include="Assets\Scripts\SceneController.cs" />
-    <Compile Include="Assets\Scripts\Shoot.cs" />
+    <Compile Include="Assets\Scripts\Shooting.cs" />
+    <Compile Include="Assets\Scripts\Spawnpoint.cs" />
+    <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\WanderingAI.cs" />
     <None Include="Assets\Models\Robo1\Animations\Robo1 animations list.txt" />
     <None Include="Assets\Models\Robo2\Animations\Robo2 animations list.txt" />
