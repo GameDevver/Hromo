@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Shooting : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class Shooting : MonoBehaviour {
     {
         _camera = GetComponent<Camera>();//Доступ к компонентам
         //Cursor.lockState = CursorLockMode.Locked;//блокировка курсора
-        //Cursor.visible = false; //скрываем указатель мыши
+        //Cursor.visible = true; //скрываем указатель мыши
 
     }
     void OnGUI()
@@ -23,14 +24,15 @@ public class Shooting : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) /*&& EventSystem.current.IsPointerOverGameObject()*/)
+        if (Input.GetMouseButtonDown(0) && 
+            EventSystem.current.IsPointerOverGameObject() )
         { //реакция на нажатие кнопки мыши
             Vector3 point = new Vector3(_camera.pixelWidth / 2, _camera.pixelHeight / 2, 0); //середина экрана, половина ширины и высоты
             Ray ray = _camera.ScreenPointToRay(point);//Создание луча методом.
             RaycastHit hit;//переменная для информации луча
             if (Physics.Raycast(ray, out hit))
             {    //луч заполняет информацией переменную
-                Debug.Log("Hit " + hit.point);//загружаем координаты точки, в которую луч попал
+                
                 StartCoroutine(SphereIndicator(hit.point));//Запуск сопрограммы в ответ на попадание
                 GameObject hitOnject = hit.transform.gameObject;//Получаем объект, в который попал луч
                 ReactiveTarget target = hitOnject.GetComponent<ReactiveTarget>();
@@ -50,7 +52,7 @@ public class Shooting : MonoBehaviour {
     {//Сопрограмма использует функцию IEnumerator
         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere); //говорим переменной sphere,что это примитив сфера
         sphere.transform.position = pos; //перемещаем в позицию попадания, где храниться в переменной pos
-        yield return new WaitForSeconds(0.5f);//слово yield указывает когда остановиться
+        yield return new WaitForSeconds(0.3f);//слово yield указывает когда остановиться
         Destroy(sphere);//удаляем gameObject
     }
     //Кто посмотрел данный скрипт напишите мне в личку: "I know Ray."

@@ -19,7 +19,6 @@ public class Fireball : MonoBehaviour {
         if (player != null)
         {//проверяем, является ли объект PlayerCharacter
             player.Hurt(damage);
-            
         }
         Destroy(this.gameObject);
     }

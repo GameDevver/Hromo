@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
 
-    public Text Scorelabel;
+    public Text Timelabel;
 
     // Use this for initialization
     void Start() {
@@ -14,7 +14,7 @@ public class UIController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        Scorelabel.text = Time.realtimeSinceStartup.ToString();
+        Timelabel.text = Time.realtimeSinceStartup.ToString();
     }
 
     public void OnOpenSettings()
@@ -26,4 +26,5 @@ public class UIController : MonoBehaviour {
     {
         Debug.Log("Settings down");
     }
+
 }

@@ -16,7 +16,16 @@ public class PlayerCharacter : MonoBehaviour
     public void Hurt(int damage)
     {
         _health -= damage;//уменьшение здоровья игрока
-        Debug.Log("Health: " + _health);
+        if (_health < 0)
+        {
+            _health = 0;
+            Debug.Log("Health: " + _health + "  GAME OVER!");
+        }
+        else {
+            Debug.Log("Health: " + _health);
+
+        }
+        ChangeHealth(0);
     }
 
     public void ChangeHealth(int value)
@@ -30,7 +39,7 @@ public class PlayerCharacter : MonoBehaviour
         else if (_health < 0)
         {
             _health = 0;//не даем уменьшать жизнь в минус
-            Debug.Log("health: " + _health + "/" + maxHealth);
+            Debug.Log("Game Over!");
         }
     }
 
