@@ -42,7 +42,7 @@ public class WanderingAI : MonoBehaviour {
                 }
                 else if (hit.distance < obstacleRange)
                 {
-                    float angle = Random.Range(-110, 110);//Поворот с наполовину случайным значение
+                    float angle = Random.Range(-90, 90);//Поворот с наполовину случайным значение
                     transform.Rotate(0, angle, 0);
                 }
             }

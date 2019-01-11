@@ -7,6 +7,7 @@ public class PlayerCharacter : MonoBehaviour
     private int _health;
     private int maxHealth;
 
+
     void Start()
     {
         _health = 50;//инициализация переменной

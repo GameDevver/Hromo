@@ -11,7 +11,7 @@ public class Shooting : MonoBehaviour {
     {
         _camera = GetComponent<Camera>();//Доступ к компонентам
         //Cursor.lockState = CursorLockMode.Locked;//блокировка курсора
-        //Cursor.visible = true; //скрываем указатель мыши
+        //Cursor.visible = false; //скрываем указатель мыши
 
     }
     void OnGUI()
@@ -24,8 +24,7 @@ public class Shooting : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && 
-            EventSystem.current.IsPointerOverGameObject() )
+        if (Input.GetMouseButtonDown(0))
         { //реакция на нажатие кнопки мыши
             Vector3 point = new Vector3(_camera.pixelWidth / 2, _camera.pixelHeight / 2, 0); //середина экрана, половина ширины и высоты
             Ray ray = _camera.ScreenPointToRay(point);//Создание луча методом.
@@ -36,9 +35,11 @@ public class Shooting : MonoBehaviour {
                 StartCoroutine(SphereIndicator(hit.point));//Запуск сопрограммы в ответ на попадание
                 GameObject hitOnject = hit.transform.gameObject;//Получаем объект, в который попал луч
                 ReactiveTarget target = hitOnject.GetComponent<ReactiveTarget>();
+
                 if (target != null)
                 { //проверяем у этого объекта компонента ReactiveTarget
                     target.ReactToHit();
+                  
                 }
                 else
                 {

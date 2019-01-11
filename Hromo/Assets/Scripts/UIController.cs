@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour {
 
     public Text Timelabel;
+    public Text KillLabel;
 
     // Use this for initialization
     void Start() {

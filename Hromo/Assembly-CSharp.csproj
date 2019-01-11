@@ -62,8 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CamraRotator.cs" />
+    <Compile Include="Assets\Scripts\CompReactiveTarget.cs" />
     <Compile Include="Assets\Scripts\ComputerHelth.cs" />
     <Compile Include="Assets\Scripts\Fireball.cs" />
+    <Compile Include="Assets\Scripts\Pause.cs" />
     <Compile Include="Assets\Scripts\PlayerCharacter.cs" />
     <Compile Include="Assets\Scripts\ReactiveTarget.cs" />
     <Compile Include="Assets\Scripts\SceneController.cs" />

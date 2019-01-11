@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReactiveTarget : MonoBehaviour {
+public class ReactiveTarget : MonoBehaviour
+{
 
     public void ReactToHit()
     {//метод, вызванный сценарием стрельбы
